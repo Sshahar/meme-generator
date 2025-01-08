@@ -25,3 +25,11 @@ function onAddTxt(txt) {
   setLineTxt(txt)
   renderMeme()
 }
+
+function onDownloadMeme(elLink) {
+  const dataUrl = gElCanvas.toDataURL()
+
+  elLink.href = dataUrl
+  // Set a name for the downloaded file
+  elLink.download = 'my-perfect-img'
+}
