@@ -50,6 +50,10 @@ function switchLine() {
   return gMeme.lines[gMeme.selectedLine].txt
 }
 
+function setLineLocation(lineIdx, location) {
+  gMeme.lines[lineIdx].location = location
+
+}
 function _createLine(txt) {
   return { txt, color: 'black', size: 40 }
 }

@@ -4,17 +4,20 @@ function coverCanvasWithImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawText(text, x, y, isHighlighted, fontSize, color = 'black',) {
+function drawLine(line, isHighlighted) {
+  const { txt, location, size, color } = line
+  const { x, y } = location
+
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'red'
   gCtx.fillStyle = color
-  gCtx.font = `${fontSize}px Arial`
+  gCtx.font = `${size}px Arial`
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
 
-  gCtx.fillText(text, x, y)
+  gCtx.fillText(txt, x, y)
 
-  if (isHighlighted) drawBorderRect(x, y, fontSize, text)
+  if (isHighlighted) drawBorderRect(x, y, size, txt)
 }
 
 function drawBorderRect(x, y, size, text) {
@@ -35,10 +38,4 @@ function loadImageFromSrc(imgData, onImageReady) {
     onImageReady(img)
   }
   img.src = imgData
-}
-
-function renderImg(img) {
-  gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
-  gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-  drawText('Hola!', gElCanvas.width / 2, 20) // 20px half font size
 }

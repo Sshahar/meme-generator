@@ -19,12 +19,14 @@ function renderMeme() {
   elImg.onload = () => {
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
-      const { txt, color, size } = line
+      const { size } = line
       const isSelected = i === meme.selectedLine
       const halfSize = size / 2
       let deltaY = halfSize + i * size
       if (deltaY > gElCanvas.height - halfSize) deltaY = halfSize
-      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, size, color,)
+
+      setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
+      drawLine(line, isSelected)
     })
   }
 }
@@ -64,6 +66,5 @@ function onAddLine() {
 function onSwitchLine() {
   const txt = switchLine()
   $('.meme-text-input').val(txt)
-  // TODO : add border to selected input (highlight)
   renderMeme()
 }
