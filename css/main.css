@@ -2,6 +2,7 @@
 /* @import url(setup/vars.css); */
 
 /* Basics  */
+@import url(basics/base.css);
 @import url(basics/layout.css);
 @import url(basics/helpers.css);
 
@@ -12,6 +13,9 @@
 @import url(components/main-nav.css);
 @import url(components/nav-list.css);
 @import url(components/meme-list-image.css);
+@import url(components/memes-grid-container.css);
+@import url(components/meme-gallery-page.css);
+@import url(components/meme-editor-page.css);
 
 /* Media Queries */
 @import url(setup/mq.css);

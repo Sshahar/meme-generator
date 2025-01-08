@@ -2,12 +2,15 @@
 
 renderGallery()
 function renderGallery() {
-  let strHTML = [1, 2].map(img =>
-    `
+  let strHTML = ''
+  for (let i = 0; i < 18; i++) {
+    strHTML += `
         <article class="meme-list-image">
-          <img src="img/${img}.jpg" alt="smart meme" onclick="onImgSelect(this)">
+          <img src="img/${i + 1}.jpg" alt="smart meme" onclick="onImgSelect(this)">
         </article>
-    `).join('')
+    `
+  }
+
   document.querySelector('.meme-gallery-page .memes-grid-container')
     .innerHTML = strHTML
 }

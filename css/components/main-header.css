@@ -1,7 +1,13 @@
 .main-header {
-  height: 160px;
+  position: fixed;
+  height: 60px;
 }
 
 .main-header .btn-toggle-menu {
   display: none;
+}
+
+.meme-gallery-page,
+.meme-editor-page {
+  margin-block-start: 60px;
 }
