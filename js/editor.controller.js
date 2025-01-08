@@ -11,12 +11,12 @@ function onInit() {
 }
 
 function renderMeme() {
-  let meme = getMemeById('')
+  let { src: imgSrc, line1: text, line1Color: color } = getMemeById('')
   const elImg = new Image()
-  elImg.src = meme.src
+  elImg.src = imgSrc
   elImg.onload = () => {
     coverCanvasWithImg(elImg)
-    drawText(meme.line1, gElCanvas.width / 2, 20) // 20px half font size
+    drawText(text, gElCanvas.width / 2, 20, color) // 20px half font size
   }
 }
 
@@ -32,4 +32,9 @@ function onDownloadMeme(elLink) {
   elLink.href = dataUrl
   // Set a name for the downloaded file
   elLink.download = 'my-perfect-img'
+}
+
+function onSetFillStyle(color) {
+  setFillStyle(color)
+  renderMeme()
 }

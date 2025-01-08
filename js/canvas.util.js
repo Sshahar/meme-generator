@@ -4,10 +4,10 @@ function coverCanvasWithImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawText(text, x, y) {
+function drawText(text, x, y, color = 'black') {
   gCtx.lineWidth = 2
   // gCtx.strokeStyle = 'brown'
-  gCtx.fillStyle = 'black'
+  gCtx.fillStyle = color
   gCtx.font = '40px Arial'
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'

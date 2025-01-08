@@ -2,7 +2,7 @@
 
 const STORAGE_KEY = 'memeDB'
 
-var gMeme = { src: 'img/1.jpg', line1: 'Halala' }
+var gMeme = { src: 'img/1.jpg', line1: 'Add Text Here', line1Color: 'black' }
 
 function onInitMemes() {
 }
@@ -40,6 +40,10 @@ function setLineTxt(txt) {
 
 function setImg(imgSrc) {
   gMeme.src = imgSrc
+}
+
+function setFillStyle(color) {
+  gMeme.line1Color = color
 }
 
 function _createMeme() {
