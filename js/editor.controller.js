@@ -55,3 +55,9 @@ function onAddLine() {
   addLine()
   renderMeme()
 }
+
+function onSwitchLine() {
+  const txt = switchLine()
+  $('.meme-text-input').val(txt)
+  // TODO : add border to selected input (highlight)
+}

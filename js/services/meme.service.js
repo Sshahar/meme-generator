@@ -6,7 +6,7 @@ var _selectedLine
 var gMeme = {
   src: 'img/1.jpg', lines: [
     { txt: 'Add Text Here', color: 'black', font: '40px Arial', },
-    { txt: 'I AM Immutable', color: 'black', font: '40px Arial', },
+    { txt: 'not Immutable :(', color: 'black', font: '40px Arial', },
   ],
 }
 
@@ -45,4 +45,10 @@ function updateLineSize(sizeDelta) {
 function addLine() {
   let line = { txt: 'Add Text Here', color: 'black', font: '40px Arial', }
   gMeme.lines.push(line)
+}
+
+function switchLine() {
+  _selectedLine++
+  if (_selectedLine >= gMeme.lines.length) _selectedLine = 0
+  return gMeme.lines[_selectedLine].txt
 }
