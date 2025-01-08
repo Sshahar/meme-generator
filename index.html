@@ -25,6 +25,13 @@
         <input type="text" data-trans="add-text-here" class="meme-text-input" placeholder="Add Text Here"
           value="Add Text Here" oninput="onAddTxt(this.value)" />
 
+        <div class="input-editors-container">
+          <button onclick="onAddLine()" class="btn-editor btn-add-input">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Add Line
+          </button>
+        </div>
+
         <div class="font-editors-container">
           <button class="btn-font" onclick="onUpdateLineSize(1)"><i class="fa-solid fa-font" aria-hidden="true"></i> +
           </button>

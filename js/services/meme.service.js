@@ -41,3 +41,8 @@ function updateLineSize(sizeDelta) {
   entireFont = `${size}px ${font}`
   gMeme.lines[_selectedLine].font = entireFont
 }
+
+function addLine() {
+  let line = { txt: 'Add Text Here', color: 'black', font: '40px Arial', }
+  gMeme.lines.push(line)
+}

@@ -20,7 +20,9 @@ function renderMeme() {
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
       const { txt, color, font } = line
-      drawText(txt, gElCanvas.width / 2, 20 + i * 200, color, font) // 20px half font size
+      let deltaY = 20 + i * 20
+      if (deltaY > gElCanvas.height - 100) deltaY = 20 // TODO: change 100 with font height (first change line.font to line.size)
+      drawText(txt, gElCanvas.width / 2, deltaY, color, font) // 20px half font size
     })
   }
 }
@@ -46,5 +48,10 @@ function onSetFillStyle(color) {
 
 function onUpdateLineSize(sizeDelta) {
   updateLineSize(sizeDelta)
+  renderMeme()
+}
+
+function onAddLine() {
+  addLine()
   renderMeme()
 }
