@@ -34,10 +34,12 @@ function getMemeById(memeId) {
   return gMeme
 }
 
-function updateMeme(memeId, newData) { }
-
 function setLineTxt(txt) {
   gMeme.line1 = txt
+}
+
+function setImg(imgSrc) {
+  gMeme.src = imgSrc
 }
 
 function _createMeme() {
