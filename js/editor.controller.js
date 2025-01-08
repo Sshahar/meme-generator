@@ -83,8 +83,6 @@ function onDown(ev) {
   renderMeme()
 }
 
-function onUp() { }
-
 function getEvLoc(ev) {
   const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
@@ -105,4 +103,9 @@ function getEvLoc(ev) {
     }
   }
   return loc
+}
+
+function onSectionChange(elLink) {
+  const section = elLink.href.split("#")[1]
+  showSection(section)
 }

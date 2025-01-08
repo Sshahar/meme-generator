@@ -14,7 +14,22 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body onload="onInit()">
+<body onload="onInit()" class="main-layout">
+  <header class="main-header">
+    <div class="header-content flex align-center space-between">
+      <img src="img/logo.png" class="logo">
+
+      <nav class="main-nav">
+        <ul class="nav-list flex clean-list">
+          <li><a onclick="onSectionChange(this)" href="#gallery" class="active">Gallery</a></li>
+          <li><a onclick="onSectionChange(this)" href="#editor">Editor</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-toggle-menu" onclick="toggleMenu()">🍔</button>
+
+    </div>
+  </header>
 
 
   <section class="meme-gallery-page">
@@ -26,8 +41,7 @@
 
   <section class="meme-editor-page">
     <main>
-      <canvas tabindex="1" class="meme-editor-canvas" onmousedown="onDown(event)" onmouseup="onUp()"
-        ontouchstart="onDown(event)" ontouchend="onUp()"></canvas>
+      <canvas tabindex="1" class="meme-editor-canvas" onmousedown="onDown(event)" ontouchstart="onDown(event)"></canvas>
       <section class="editor-tools">
         <input type="text" data-trans="add-text-here" class="meme-text-input" placeholder="Add Text Here"
           value="Add Text Here" oninput="onAddTxt(this.value)" />
@@ -62,7 +76,6 @@
       </section>
     </main>
   </section>
-
 
   <script src="js/canvas.util.js"></script>
   <script src="js/editor.controller.js"></script>

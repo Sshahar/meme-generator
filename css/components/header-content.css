@@ -1,0 +1,7 @@
+.header-content img {
+  margin-inline: 3vw;
+}
+
+.header-content {
+  border-block-end: 2px solid black;
+}

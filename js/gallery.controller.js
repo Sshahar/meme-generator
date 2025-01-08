@@ -15,4 +15,6 @@ function renderGallery() {
 function onImgSelect(elImg) {
   setImg(elImg.src)
   renderMeme()
+
+  showSection("editor")
 }

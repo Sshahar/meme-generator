@@ -1,0 +1,8 @@
+.nav-list {
+  gap: 8vw;
+}
+
+
+.nav-list>*:last-of-type {
+  margin-inline-end: 3vw;
+}

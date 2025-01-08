@@ -2,9 +2,20 @@
 /* @import url(setup/vars.css); */
 
 /* Basics  */
+@import url(basics/layout.css);
+@import url(basics/helpers.css);
 
 /* Components */
 @import url(components/editor-components/editor.canvas.css);
+@import url(components/main-header.css);
+@import url(components/header-content.css);
+@import url(components/main-nav.css);
+@import url(components/nav-list.css);
+@import url(components/meme-list-image.css);
 
 /* Media Queries */
-/* @import url(setup/mq.css); */
+@import url(setup/mq.css);
+
+header .logo {
+  width: 200px;
+}
