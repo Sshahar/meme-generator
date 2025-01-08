@@ -1,3 +1,4 @@
+'use strict'
 
 function coverCanvasWithImg(elImg) {
   gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
