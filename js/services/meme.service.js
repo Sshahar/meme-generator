@@ -7,7 +7,13 @@ var gMeme = {
     _createLine('Add Text Here'),
     _createLine('not Immutable :('),
   ],
-  selectedLine: -1
+  selectedLine: -1,
+  lineTxt() {
+    return gMeme.lines[gMeme.selectedLine].txt
+  },
+  lineColor() {
+    return gMeme.lines[gMeme.selectedLine].color
+  },
 }
 
 function onInitMemes() {
@@ -52,8 +58,23 @@ function switchLine() {
 
 function setLineLocation(lineIdx, location) {
   gMeme.lines[lineIdx].location = location
-
 }
+
+function highlightLine(clickLocation) {
+  let selectedLine = gMeme.lines.findIndex(line => {
+    const { location, size: height, txt } = line
+    // is click in border?
+    const bounds = getLineBounds(location, getTxtWidth(txt), height)
+    // console.log('bounds:', bounds)
+    if (isInBounds(clickLocation, bounds)) {
+      return true
+    }
+  })
+  if (selectedLine !== -1) gMeme.selectedLine = selectedLine
+
+  return gMeme.lineTxt()
+}
+
 function _createLine(txt) {
-  return { txt, color: 'black', size: 40 }
+  return { txt, color: '#000000', size: 40 }
 }

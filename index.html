@@ -26,7 +26,8 @@
 
   <section class="meme-editor-page">
     <main>
-      <canvas tabindex="1" class="meme-editor-canvas"></canvas>
+      <canvas tabindex="1" class="meme-editor-canvas" onmousedown="onDown(event)" onmouseup="onUp()"
+        ontouchstart="onDown(event)" ontouchend="onUp()"></canvas>
       <section class="editor-tools">
         <input type="text" data-trans="add-text-here" class="meme-text-input" placeholder="Add Text Here"
           value="Add Text Here" oninput="onAddTxt(this.value)" />
@@ -48,11 +49,13 @@
           </button>
           <button class="btn-font" onclick="onUpdateLineSize(-1)"><i class="fa-solid fa-font" aria-hidden="true"></i>
             -</button>
+          <!-- Color -->
           <button class="btn-font fill-color-icon color-picker fa-solid fa-fill-drip" aria-hidden="true">
-            <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this.value)">
+            <input type="color" class="fill-color-input meme-text-color btn-font" oninput="onSetFillStyle(this.value)">
           </button>
         </div>
 
+        <!-- Download to computer -->
         <div class="save-container">
           <a href="#" data-trans="download" class="btn btn-download" onclick="onDownloadMeme(this)">Download</a>
         </div>
