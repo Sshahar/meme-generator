@@ -19,11 +19,11 @@ function renderMeme() {
   elImg.onload = () => {
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
-      const { txt, color, font } = line
+      const { txt, color, size } = line
       const isSelected = i === meme.selectedLine
       let deltaY = 20 + i * 20
       if (deltaY > gElCanvas.height - 100) deltaY = 20 // TODO: change 100 with font height (first change line.font to line.size)
-      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, color, font) // 20px half font size
+      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, size, color,) // 20px half font size
     })
   }
 }
@@ -32,6 +32,7 @@ function onAddTxt(txt) {
   console.log(txt)
   setLineTxt(txt)
   renderMeme()
+
 }
 
 function onDownloadMeme(elLink) {
@@ -54,6 +55,7 @@ function onUpdateLineSize(sizeDelta) {
 
 function onAddLine() {
   addLine()
+
   renderMeme()
 }
 

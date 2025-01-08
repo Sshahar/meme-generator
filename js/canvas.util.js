@@ -4,11 +4,11 @@ function coverCanvasWithImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawText(text, x, y, isHighlighted, color = 'black', font = '40px Arial',) {
+function drawText(text, x, y, isHighlighted, fontSize, color = 'black',) {
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'red'
   gCtx.fillStyle = color
-  gCtx.font = font
+  gCtx.font = `${fontSize}px Arial`
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
 
