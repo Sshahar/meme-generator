@@ -11,12 +11,13 @@ function onInit() {
 }
 
 function renderMeme() {
-  let { src: imgSrc, line1: text, line1Color: color } = getMemeById('')
+  const { src: imgSrc, line1: text, line1Color: color, font } = getMemeById('')
+
   const elImg = new Image()
   elImg.src = imgSrc
   elImg.onload = () => {
     coverCanvasWithImg(elImg)
-    drawText(text, gElCanvas.width / 2, 20, color) // 20px half font size
+    drawText(text, gElCanvas.width / 2, 20, color, font) // 20px half font size
   }
 }
 
@@ -36,5 +37,10 @@ function onDownloadMeme(elLink) {
 
 function onSetFillStyle(color) {
   setFillStyle(color)
+  renderMeme()
+}
+
+function onUpdateLineSize(sizeDelta) {
+  updateLineSize(sizeDelta)
   renderMeme()
 }

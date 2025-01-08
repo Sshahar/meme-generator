@@ -2,7 +2,7 @@
 
 const STORAGE_KEY = 'memeDB'
 
-var gMeme = { src: 'img/1.jpg', line1: 'Add Text Here', line1Color: 'black' }
+var gMeme = { src: 'img/1.jpg', line1: 'Add Text Here', line1Color: 'black', font: '40px Arial' }
 
 function onInitMemes() {
 }
@@ -50,4 +50,14 @@ function _createMeme() {
   // return {
   //   id: makeId(),
   // }
+}
+
+function updateLineSize(sizeDelta) {
+  const font = gMeme.font.split(' ')[1]
+  let size = gMeme.font.split(' ')[0]
+  size = +size.substring(0, size.length - 2) //  remove 'px'
+
+  size += sizeDelta
+
+  gMeme.font = `${size}px ${font}`
 }

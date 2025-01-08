@@ -26,6 +26,10 @@
           value="Add Text Here" oninput="onAddTxt(this.value)" />
 
         <div class="font-editors-container">
+          <button class="btn-font" onclick="onUpdateLineSize(1)"><i class="fa-solid fa-font" aria-hidden="true"></i> +
+          </button>
+          <button class="btn-font" onclick="onUpdateLineSize(-1)"><i class="fa-solid fa-font" aria-hidden="true"></i>
+            -</button>
           <button class="btn-font fill-color-icon color-picker fa-solid fa-fill-drip" aria-hidden="true">
             <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this.value)">
           </button>
