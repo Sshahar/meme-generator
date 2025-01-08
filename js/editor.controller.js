@@ -21,9 +21,10 @@ function renderMeme() {
     meme.lines.forEach((line, i) => {
       const { txt, color, size } = line
       const isSelected = i === meme.selectedLine
-      let deltaY = 20 + i * 20
-      if (deltaY > gElCanvas.height - 100) deltaY = 20 // TODO: change 100 with font height (first change line.font to line.size)
-      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, size, color,) // 20px half font size
+      const halfSize = size / 2
+      let deltaY = halfSize + i * size
+      if (deltaY > gElCanvas.height - halfSize) deltaY = halfSize
+      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, size, color,)
     })
   }
 }
@@ -37,6 +38,7 @@ function onAddTxt(txt) {
 
 function onDownloadMeme(elLink) {
   const dataUrl = gElCanvas.toDataURL()
+  // TODO: fix save of highlight input
 
   elLink.href = dataUrl
   // Set a name for the downloaded file

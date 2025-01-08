@@ -14,7 +14,18 @@ function drawText(text, x, y, isHighlighted, fontSize, color = 'black',) {
 
   gCtx.fillText(text, x, y)
 
-  if (isHighlighted) gCtx.strokeText(text, x, y)
+  if (isHighlighted) drawBorderRect(x, y, fontSize, text)
+}
+
+function drawBorderRect(x, y, size, text) {
+  // Measure the text width
+  const textMetrics = gCtx.measureText(text)
+  const textWidth = textMetrics.width
+  const textHeight = size
+
+  gCtx.strokeStyle = 'red'
+  gCtx.strokeRect(x - (textWidth / 2), y - (textHeight / 2), textWidth, size)
+
 }
 
 function loadImageFromSrc(imgData, onImageReady) {
