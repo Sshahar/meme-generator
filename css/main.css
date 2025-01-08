@@ -1,5 +1,5 @@
 /* Setup */
-/* @import url(setup/vars.css); */
+@import url(setup/vars.css);
 
 /* Basics  */
 @import url(basics/base.css);
@@ -16,6 +16,7 @@
 @import url(components/memes-grid-container.css);
 @import url(components/meme-gallery-page.css);
 @import url(components/meme-editor-page.css);
+@import url(components/editor-tools.css);
 
 /* Media Queries */
 @import url(setup/mq.css);

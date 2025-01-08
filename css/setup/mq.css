@@ -11,7 +11,11 @@
 @media (min-width: 640px) {}
 
 /* Medium */
-@media (min-width: 900px) {}
+@media (min-width: 900px) {
+  .meme-editor-page main {
+    flex-direction: row;
+  }
+}
 
 /* Large */
 @media (min-width: 1020px) {}

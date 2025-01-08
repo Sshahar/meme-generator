@@ -21,3 +21,16 @@
 .hidden {
   display: none;
 }
+
+
+.custom-input {
+  font-size: 24px;
+  padding: 10px;
+  border: 2px solid var(--clr-primary-1);
+  border-radius: 1em;
+}
+
+/* Change border color on focus */
+.custom-input:focus {
+  border-color: var(--clr-primary-2);
+}
