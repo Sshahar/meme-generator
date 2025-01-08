@@ -12,7 +12,7 @@ function onInit() {
 }
 
 function renderMeme() {
-  const { src: imgSrc, ...meme } = getMemeById('')
+  const { src: imgSrc, ...meme } = getMeme()
 
   const elImg = new Image()
   elImg.src = imgSrc
