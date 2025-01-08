@@ -2,9 +2,16 @@
 
 const STORAGE_KEY = 'memeDB'
 
-var gMeme = { src: 'img/1.jpg', line1: 'Add Text Here', line1Color: 'black', font: '40px Arial' }
+var _selectedLine
+var gMeme = {
+  src: 'img/1.jpg', lines: [
+    { txt: 'Add Text Here', color: 'black', font: '40px Arial', },
+    { txt: 'I AM Immutable', color: 'black', font: '40px Arial', },
+  ],
+}
 
 function onInitMemes() {
+  _selectedLine = 0
 }
 
 function getMeme() {
@@ -35,7 +42,7 @@ function getMemeById(memeId) {
 }
 
 function setLineTxt(txt) {
-  gMeme.line1 = txt
+  gMeme.lines[_selectedLine].txt = txt
 }
 
 function setImg(imgSrc) {
@@ -43,7 +50,7 @@ function setImg(imgSrc) {
 }
 
 function setFillStyle(color) {
-  gMeme.line1Color = color
+  gMeme.lines[_selectedLine].color = color
 }
 
 function _createMeme() {
@@ -53,11 +60,13 @@ function _createMeme() {
 }
 
 function updateLineSize(sizeDelta) {
-  const font = gMeme.font.split(' ')[1]
-  let size = gMeme.font.split(' ')[0]
+  let entireFont = gMeme.lines[_selectedLine].font
+  const font = entireFont.split(' ')[1]
+  let size = entireFont.split(' ')[0]
   size = +size.substring(0, size.length - 2) //  remove 'px'
 
   size += sizeDelta
 
-  gMeme.font = `${size}px ${font}`
+  entireFont = `${size}px ${font}`
+  gMeme.lines[_selectedLine].font = entireFont
 }

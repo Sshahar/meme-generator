@@ -7,17 +7,21 @@ function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
 
+  onInitMemes()
   renderMeme()
 }
 
 function renderMeme() {
-  const { src: imgSrc, line1: text, line1Color: color, font } = getMemeById('')
+  const { src: imgSrc, ...meme } = getMemeById('')
 
   const elImg = new Image()
   elImg.src = imgSrc
   elImg.onload = () => {
     coverCanvasWithImg(elImg)
-    drawText(text, gElCanvas.width / 2, 20, color, font) // 20px half font size
+    meme.lines.forEach((line, i) => {
+      const { txt, color, font } = line
+      drawText(txt, gElCanvas.width / 2, 20 + i * 200, color, font) // 20px half font size
+    })
   }
 }
 
