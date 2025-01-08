@@ -4,16 +4,17 @@ function coverCanvasWithImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawText(text, x, y, color = 'black', font = '40px Arial') {
+function drawText(text, x, y, isHighlighted, color = 'black', font = '40px Arial',) {
   gCtx.lineWidth = 2
-  // gCtx.strokeStyle = 'brown'
+  gCtx.strokeStyle = 'red'
   gCtx.fillStyle = color
   gCtx.font = font
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
 
   gCtx.fillText(text, x, y)
-  // gCtx.strokeText(text, x, y)
+
+  if (isHighlighted) gCtx.strokeText(text, x, y)
 }
 
 function loadImageFromSrc(imgData, onImageReady) {

@@ -20,9 +20,10 @@ function renderMeme() {
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
       const { txt, color, font } = line
+      const isSelected = i === meme.selectedLine
       let deltaY = 20 + i * 20
       if (deltaY > gElCanvas.height - 100) deltaY = 20 // TODO: change 100 with font height (first change line.font to line.size)
-      drawText(txt, gElCanvas.width / 2, deltaY, color, font) // 20px half font size
+      drawText(txt, gElCanvas.width / 2, deltaY, isSelected, color, font) // 20px half font size
     })
   }
 }
@@ -60,4 +61,5 @@ function onSwitchLine() {
   const txt = switchLine()
   $('.meme-text-input').val(txt)
   // TODO : add border to selected input (highlight)
+  renderMeme()
 }

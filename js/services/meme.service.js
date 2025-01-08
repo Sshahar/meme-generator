@@ -2,24 +2,28 @@
 
 const STORAGE_KEY = 'memeDB'
 
-var _selectedLine
 var gMeme = {
   src: 'img/1.jpg', lines: [
     { txt: 'Add Text Here', color: 'black', font: '40px Arial', },
     { txt: 'not Immutable :(', color: 'black', font: '40px Arial', },
   ],
+  selectedLine: -1
 }
 
 function onInitMemes() {
-  _selectedLine = 0
+  gMeme.selectedLine = 0
 }
 
 function getMeme() {
   return gMeme
 }
 
+function getSelectedLine() {
+  return gMeme.selectedLine
+}
+
 function setLineTxt(txt) {
-  gMeme.lines[_selectedLine].txt = txt
+  gMeme.lines[gMeme.selectedLine].txt = txt
 }
 
 function setImg(imgSrc) {
@@ -27,11 +31,11 @@ function setImg(imgSrc) {
 }
 
 function setFillStyle(color) {
-  gMeme.lines[_selectedLine].color = color
+  gMeme.lines[gMeme.selectedLine].color = color
 }
 
 function updateLineSize(sizeDelta) {
-  let entireFont = gMeme.lines[_selectedLine].font
+  let entireFont = gMeme.lines[gMeme.selectedLine].font
   const font = entireFont.split(' ')[1]
   let size = entireFont.split(' ')[0]
   size = +size.substring(0, size.length - 2) //  remove 'px'
@@ -39,7 +43,7 @@ function updateLineSize(sizeDelta) {
   size += sizeDelta
 
   entireFont = `${size}px ${font}`
-  gMeme.lines[_selectedLine].font = entireFont
+  gMeme.lines[gMeme.selectedLine].font = entireFont
 }
 
 function addLine() {
@@ -48,7 +52,7 @@ function addLine() {
 }
 
 function switchLine() {
-  _selectedLine++
-  if (_selectedLine >= gMeme.lines.length) _selectedLine = 0
-  return gMeme.lines[_selectedLine].txt
+  gMeme.selectedLine++
+  if (gMeme.selectedLine >= gMeme.lines.length) gMeme.selectedLine = 0
+  return gMeme.lines[gMeme.selectedLine].txt
 }
