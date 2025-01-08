@@ -1,5 +1,5 @@
 /* Setup */
-@import url(setup/vars.css);
+/* @import url(setup/vars.css); */
 
 /* Basics  */
 
@@ -7,4 +7,4 @@
 @import url(components/editor-components/editor.canvas.css);
 
 /* Media Queries */
-@import url(setup/mq.css);
+/* @import url(setup/mq.css); */
