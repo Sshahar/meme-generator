@@ -12,9 +12,6 @@
   margin-block-start: 60px;
 }
 
-.meme-editor-page main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+.main-header .logo {
+  width: 200px;
 }

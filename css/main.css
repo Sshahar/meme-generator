@@ -19,7 +19,3 @@
 
 /* Media Queries */
 @import url(setup/mq.css);
-
-header .logo {
-  width: 200px;
-}
