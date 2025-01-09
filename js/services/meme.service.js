@@ -16,6 +16,9 @@ var gMeme = {
   },
   setAlign(align) {
     gMeme.lines[gMeme.selectedLine].align = align
+  },
+  setFont(font) {
+    gMeme.lines[gMeme.selectedLine].font = font
   }
 }
 
@@ -79,5 +82,5 @@ function highlightLine(clickLocation) {
 }
 
 function _createLine(txt) {
-  return { txt, color: '#000000', size: 40, align: 'center' }
+  return { txt, color: '#000000', size: 40, align: 'center', font: 'arial' }
 }

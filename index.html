@@ -76,6 +76,20 @@
               <i class="fa-solid fa-align-right"></i>
             </button>
 
+            <!-- Font family -->
+            <select class="font-picker" onchange="onSetFont(this.value)">
+              <option value="arial">ARIAL</option>
+              <option value="impact">IMPACT</option>
+              <option value="verdana">VERDANA</option>
+              <option value="tahoma">TAHOMA</option>
+              <option value="trebuchet ms">TREBUCHET MS</option>
+              <option value="times new  roman">TIMES NEW ROMAN</option>
+              <option value="georgia">GEORGIA</option>
+              <option value="garamond">GARAMOND</option>
+              <option value="courier new">COURIER NEW</option>
+              <option value="brush script mt">BRUSH SCRIPT MT</option>
+            </select>
+
             <!-- Color -->
             <button class="btn-font fill-color-icon color-picker fa-solid fa-fill-drip">
               <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this)"></input>

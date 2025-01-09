@@ -89,3 +89,8 @@ function onSetAlignment(align) {
   gMeme.setAlign(align)
   renderMeme()
 }
+
+function onSetFont(font) {
+  gMeme.setFont(font)
+  renderMeme()
+}

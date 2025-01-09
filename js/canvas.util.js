@@ -7,13 +7,13 @@ function coverCanvasWithImg(elImg) {
 }
 
 function drawLine(line, isHighlighted) {
-  const { txt, location, size, color, align } = line
+  const { txt, location, size, color, align, font } = line
   const { x, y } = location
 
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'red'
   gCtx.fillStyle = color
-  gCtx.font = `${size}px Arial`
+  gCtx.font = `${size}px ${font}`
   gCtx.textAlign = align
   gCtx.textBaseline = 'middle'
 
