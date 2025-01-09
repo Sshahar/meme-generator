@@ -56,6 +56,7 @@ function renderMeme(print = false) {
 
     if (print === "download" && gShouldPrint) downloadMeme()
     else if (print === "save" && gShouldPrint) saveMeme()
+    else if (print === "upload" && gShouldPrint) uploadMeme()
   }
 
   renderEditor()
@@ -133,4 +134,46 @@ function onSetFont(font) {
 function onDeleteLine() {
   gMeme.deleteLine()
   renderMeme()
+}
+
+
+function onUploadImg(ev) {
+  ev.preventDefault()
+  gShouldPrint = true
+  renderMeme("upload")
+}
+
+function uploadMeme() {
+  const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+  // After a succesful upload, allow the user to share on Facebook
+  function onSuccess(uploadedImgUrl) {
+    const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+    console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+  }
+
+  uploadImg(canvasData, onSuccess)
+}
+
+function onSelectEmoji(elImg) {
+  // Should set draw mode?
+  if ($(elImg).hasClass('active')) {
+    $(elImg).toggleClass('active')
+    setDrawMode()
+    return
+  }
+
+  setImageBrush(elImg)
+
+  // Which image to highlight?
+  let elImgs = document.querySelectorAll('.select-img-container img')
+  for (var i = 0; i < elImgs.length; i++) {
+    if (elImgs[i].classList.contains('active')
+      && elImgs[i] !== elImg) {
+      elImgs[i].classList.remove('active')
+      break
+    }
+  }
+  $(elImg).toggleClass('active')
 }

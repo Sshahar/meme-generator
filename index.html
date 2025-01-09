@@ -134,8 +134,14 @@
 
         <!-- Download to computer -->
         <div class="save-container">
-          <a href="#" data-trans="save" class="btn btn-save" onclick="onSaveMeme()">Save</a>
-          <a href="#" data-trans="download" class="btn btn-download" onclick="onDownloadMeme(this)">Download</a>
+          <a data-trans="save" class="btn btn-save" onclick="onSaveMeme()">Save</a>
+
+          <form action="" method="POST" enctype="multipart/form-data" onsubmit="onUploadImg(event)">
+            <input name="img" id="imgData" type="hidden" />
+            <button class="btn-share-container" type="submit">
+              <a data-trans="share" class="btn btn-share">Share</a></button>
+          </form>
+          <a data-trans="download" class="btn btn-download" onclick="onDownloadMeme(this)">Download</a>
         </div>
       </section>
     </main>
@@ -161,6 +167,7 @@
   <script src="js/saved.controller.js"></script>
   <script src="js/services/saved.service.js"></script>
   <script src="js/randomize.controller.js"></script>
+  <script src="js/services/upload.service.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
