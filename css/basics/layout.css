@@ -1,7 +1,3 @@
 .main-layout {
   display: grid;
-  /* grid-template-columns:
-      var(--layoutpadding) 1fr var(--layoutpadding); */
-  grid-template-columns:
-    var(--layoutpadding) 1fr var(--layoutpadding);
 }

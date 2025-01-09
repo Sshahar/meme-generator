@@ -43,10 +43,6 @@
   .main-nav a {
     padding: 1em;
   }
-
-  .editor-tools {
-    padding: 0;
-  }
 }
 
 /* Small */
@@ -54,13 +50,23 @@
   .meme-list-image img {
     max-width: 20vw;
   }
+
+  .main-layout {
+    display: grid;
+    grid-template-columns:
+      var(--layout-padding) 1fr var(--layout-padding);
+  }
+
+  .main-layout>* {
+    grid-column: 2;
+  }
 }
 
 /* Medium */
 @media (min-width: 900px) {
 
   .meme-editor-page .meme-editor-canvas {
-    width: 35vw;
+    width: 50vw;
   }
 
   .filter-search-section {
@@ -72,5 +78,9 @@
 @media (min-width: 1020px) {
   .meme-editor-page main {
     flex-direction: row;
+  }
+
+  .meme-editor-page .meme-editor-canvas {
+    width: 35vw;
   }
 }
