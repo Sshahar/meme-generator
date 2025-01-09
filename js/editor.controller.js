@@ -40,7 +40,7 @@ function renderMeme() {
       let deltaY = halfSize + i * size
       if (deltaY > gElCanvas.height - halfSize) deltaY = halfSize
 
-      // line has no location?
+      // should generate new-line location?
       if (!gMeme.hasLoc(i)) setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
 
       drawLine(line, isSelected)
