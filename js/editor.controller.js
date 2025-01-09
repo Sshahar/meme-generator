@@ -2,7 +2,7 @@
 
 let gElCanvas
 let gCtx
-let gShouldDownload
+let gShouldPrint
 
 document.body.addEventListener('keydown', function onEventHandler(ev) {
   switch (ev.key) {
@@ -55,7 +55,8 @@ function renderMeme(print = false) {
 
     })
 
-    if (print && gShouldDownload) downloadMeme()
+    if (print === "download" && gShouldPrint) downloadMeme()
+    else if (print === "save" && gShouldPrint) saveMeme()
   }
 
   renderEditor()
@@ -72,9 +73,9 @@ function onAddTxt(txt) {
 }
 
 function onDownloadMeme(elLink) {
-  gShouldDownload = true
+  gShouldPrint = true
   // TODO: fix save of highlight input
-  renderMeme(downloadMeme)
+  renderMeme("download")
 }
 
 
@@ -85,7 +86,7 @@ function downloadMeme() {
   // Set a name for the downloaded file
   elLink.download = 'my-perfect-img'
   elLink.click()
-  gShouldDownload = false
+  gShouldPrint = false
   renderMeme()
 }
 

@@ -28,9 +28,15 @@ function onRemoveMeme(memeId) {
 }
 
 function onSaveMeme() {
+  gShouldPrint = true
+  renderMeme("save")
+}
+
+function saveMeme() {
   const imgData = gElCanvas.toDataURL()
   const meme = addMeme(imgData)
 
+  gShouldPrint = false
   renderMemes()
   flashMsg(`Meme Meme (id: ${meme.id})`)
 }
