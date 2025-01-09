@@ -1,4 +1,5 @@
 'use strict'
+// controller helper
 
 function coverCanvasWithImg(elImg) {
   gElCanvas.height = (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
@@ -6,14 +7,14 @@ function coverCanvasWithImg(elImg) {
 }
 
 function drawLine(line, isHighlighted) {
-  const { txt, location, size, color } = line
+  const { txt, location, size, color, align } = line
   const { x, y } = location
 
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'red'
   gCtx.fillStyle = color
   gCtx.font = `${size}px Arial`
-  gCtx.textAlign = 'center'
+  gCtx.textAlign = align
   gCtx.textBaseline = 'middle'
 
   gCtx.fillText(txt, x, y)
@@ -70,4 +71,26 @@ function showSection(section) {
   $(".meme-gallery-page").addClass("hidden")
   $(".meme-editor-page").addClass("hidden")
   $(`.meme-${section}-page`).removeClass("hidden")
+}
+
+function getEvLoc(ev) {
+  const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+
+  let loc = {
+    x: ev.offsetX,
+    y: ev.offsetY,
+  }
+
+  if (TOUCH_EVS.includes(ev.type)) {
+    // Prevent triggering the mouse ev
+    ev.preventDefault()
+    // Gets the first touch point
+    ev = ev.changedTouches[0]
+    // Calc the right loc according to the touch screen
+    loc = {
+      x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+      y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+    }
+  }
+  return loc
 }

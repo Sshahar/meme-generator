@@ -14,6 +14,9 @@ var gMeme = {
   lineColor() {
     return gMeme.lines[gMeme.selectedLine].color
   },
+  setAlign(align) {
+    gMeme.lines[gMeme.selectedLine].align = align
+  }
 }
 
 function onInitMemes() {
@@ -76,5 +79,5 @@ function highlightLine(clickLocation) {
 }
 
 function _createLine(txt) {
-  return { txt, color: '#000000', size: 40 }
+  return { txt, color: '#000000', size: 40, align: 'center' }
 }
