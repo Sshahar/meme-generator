@@ -23,6 +23,7 @@
 }
 
 .main-header .logo {
+  cursor: pointer;
   width: 200px;
 }
 
