@@ -105,5 +105,5 @@ function highlightLine(clickLocation) {
 }
 
 function _createLine(txt) {
-  return { txt, color: '#000000', size: 40, align: 'center', font: 'arial' }
+  return { txt, color: '#ffffff', size: 40, align: 'center', font: 'arial' }
 }
