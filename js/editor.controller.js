@@ -3,6 +3,18 @@
 let gElCanvas
 let gCtx
 
+document.body.addEventListener('keydown', function onEventHandler(ev) {
+  switch (ev.key) {
+    case "ArrowUp":
+      updateLocation(-gMeme.getStep())
+      break;
+    case "ArrowDown":
+      updateLocation(gMeme.getStep())
+      break;
+  }
+  renderMeme()
+})
+
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
@@ -27,7 +39,9 @@ function renderMeme() {
       let deltaY = halfSize + i * size
       if (deltaY > gElCanvas.height - halfSize) deltaY = halfSize
 
-      setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
+      // line has no location?
+      if (!gMeme.hasLoc(i)) setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
+
       drawLine(line, isSelected)
     })
   }

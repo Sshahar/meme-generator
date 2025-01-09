@@ -14,12 +14,18 @@ var gMeme = {
   lineColor() {
     return gMeme.lines[gMeme.selectedLine].color
   },
+  getStep() {
+    return 5
+  },
   setAlign(align) {
     gMeme.lines[gMeme.selectedLine].align = align
   },
   setFont(font) {
     gMeme.lines[gMeme.selectedLine].font = font
-  }
+  },
+  hasLoc(i) {
+    return gMeme.lines[i].location
+  },
 }
 
 function onInitMemes() {
@@ -64,6 +70,10 @@ function switchLine() {
 
 function setLineLocation(lineIdx, location) {
   gMeme.lines[lineIdx].location = location
+}
+
+function updateLocation(deltaY) {
+  gMeme.lines[gMeme.selectedLine].location.y += deltaY
 }
 
 function highlightLine(clickLocation) {
