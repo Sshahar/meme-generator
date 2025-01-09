@@ -2,6 +2,7 @@
 
 let gElCanvas
 let gCtx
+let gShouldDownload
 
 document.body.addEventListener('keydown', function onEventHandler(ev) {
   switch (ev.key) {
@@ -26,7 +27,7 @@ function onInit() {
   onInitGallery()
 }
 
-function renderMeme() {
+function renderMeme(print = false) {
   const { src: imgSrc, ...meme } = getMeme()
 
   const elImg = new Image()
@@ -35,7 +36,7 @@ function renderMeme() {
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
       const { size } = line
-      const isSelected = i === meme.selectedLine
+      const isSelected = i === meme.selectedLine && !print
       const halfSize = size / 2
       let deltaY = halfSize + i * size
       if (deltaY > gElCanvas.height - halfSize) deltaY = halfSize
@@ -44,7 +45,10 @@ function renderMeme() {
       if (!gMeme.hasLoc(i)) setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
 
       drawLine(line, isSelected)
+
     })
+
+    if (print && gShouldDownload) downloadMeme()
   }
 
   renderEditor()
@@ -61,12 +65,21 @@ function onAddTxt(txt) {
 }
 
 function onDownloadMeme(elLink) {
-  const dataUrl = gElCanvas.toDataURL()
+  gShouldDownload = true
   // TODO: fix save of highlight input
+  renderMeme(downloadMeme)
+}
 
+
+function downloadMeme() {
+  const dataUrl = gElCanvas.toDataURL()
+  const elLink = document.querySelector('.btn-download')
   elLink.href = dataUrl
   // Set a name for the downloaded file
   elLink.download = 'my-perfect-img'
+  elLink.click()
+  gShouldDownload = false
+  renderMeme()
 }
 
 function onSetFillStyle(color) {
