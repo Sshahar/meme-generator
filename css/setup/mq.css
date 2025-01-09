@@ -3,19 +3,29 @@
 
   .meme-list-image img,
   .meme-editor-page .meme-editor-canvas {
-    width: 100vw;
+    /* TODO: make 100vw without overflow*/
+    width: 90vw;
   }
 }
 
 /* Small */
-@media (min-width: 640px) {}
+@media (min-width: 640px) {
+  .meme-list-image img {
+    max-width: 20vw;
+  }
+}
 
 /* Medium */
 @media (min-width: 900px) {
-  .meme-editor-page main {
-    flex-direction: row;
+
+  .meme-editor-page .meme-editor-canvas {
+    width: 35vw;
   }
 }
 
 /* Large */
-@media (min-width: 1020px) {}
+@media (min-width: 1020px) {
+  .meme-editor-page main {
+    flex-direction: row;
+  }
+}

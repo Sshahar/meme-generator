@@ -1,7 +1,17 @@
+.meme-editor-page {}
+
 .meme-editor-page main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+.meme-editor-page .meme-editor-canvas {
+  grid-column: 2;
+}
+
+.meme-editor-page .editor-tools {
+  grid-column: 3;
 }

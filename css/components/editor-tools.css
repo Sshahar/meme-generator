@@ -1,4 +1,7 @@
-.font-editors-container {}
+.font-editors-container {
+  margin: auto;
+  width: 50%;
+}
 
 .input-editors-container {}
 
