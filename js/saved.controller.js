@@ -4,7 +4,7 @@ var gUpdateMeme
 
 function onInitSaved() {
   renderMemes()
-  showSection("saved")
+  onShowSection("saved")
 
 }
 

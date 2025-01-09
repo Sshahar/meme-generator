@@ -1,7 +1,13 @@
 :root {
   --clr-primary1: #000;
-  --clr-primary2: #007bff;
+  --clr-primary2: #00448d;
   --clr-primary3: #58c93a;
+
+  --clr-bg: #181a1b;
+  --clr-content: #2e3234;
+  --clr-black: #121212;
+  --clr-grey: #7b7b7b;
+  --clr-white: #e8e6e3;
 
   --spacing-head: 60px;
   --layout-padding: 20px

@@ -9,7 +9,6 @@
 .main-nav a {
   display: grid;
   place-items: center;
-  color: inherit;
   text-decoration: none;
 
   transition: box-shadow .4s;
