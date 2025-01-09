@@ -6,6 +6,47 @@
     /* TODO: make 100vw without overflow*/
     width: 90vw;
   }
+
+  .main-header .btn-toggle-menu {
+    display: block;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 60px;
+    background: var(--clr-primary2);
+    left: 0;
+    width: 100%;
+
+
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 1s;
+    align-items: end;
+    align-content: end;
+  }
+
+  body.menu-open .main-nav {
+    grid-template-rows: 1fr;
+  }
+
+  .main-nav>ul {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .main-nav>ul li {
+    border-bottom: 1px solid #000;
+  }
+
+  .main-nav a {
+    padding: 1em;
+  }
+
+  .editor-tools {
+    padding: 0;
+  }
 }
 
 /* Small */

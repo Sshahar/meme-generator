@@ -1,5 +1,26 @@
+.main-nav>ul>li {
+  border-inline-end: 1px solid var(--clr-primary-1);
+}
+
+.main-nav>ul>li:first-child {
+  border-inline-start: 1px solid var(--clr-primary-1);
+}
+
 .main-nav a {
+  display: grid;
+  place-items: center;
   color: inherit;
   text-decoration: none;
-  text-transform: uppercase;
+
+  transition: box-shadow .4s;
+}
+
+.main-nav a:hover {
+  box-shadow: inset 0px -6px 0 var(--clr-primary3);
+}
+
+.main-nav a.active {
+  color: var(--clr-primary3);
+  box-shadow: inset 0px -6px 0 var(--clr-primary3);
+  cursor: default;
 }
