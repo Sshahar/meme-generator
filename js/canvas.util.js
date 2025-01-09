@@ -70,6 +70,4 @@ function showSection(section) {
   $(".meme-gallery-page").addClass("hidden")
   $(".meme-editor-page").addClass("hidden")
   $(`.meme-${section}-page`).removeClass("hidden")
-
-  // TODO: update URL
 }

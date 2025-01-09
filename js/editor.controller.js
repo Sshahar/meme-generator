@@ -10,6 +10,7 @@ function onInit() {
 
   onInitMemes()
   renderMeme()
+  showSection("gallery")
 }
 
 function renderMeme() {
@@ -103,9 +104,4 @@ function getEvLoc(ev) {
     }
   }
   return loc
-}
-
-function onSectionChange(elLink) {
-  const section = elLink.href.split("#")[1]
-  showSection(section)
 }
