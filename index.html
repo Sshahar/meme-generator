@@ -23,6 +23,7 @@
         <ul class="nav-list flex clean-list">
           <li><a onclick="onShowSection('gallery')">Gallery</a></li>
           <li><a onclick="onShowSection('editor')">Editor</a></li>
+          <li><a onclick="onShowSection('saved')">Saved</a></li>
         </ul>
       </nav>
 
@@ -49,12 +50,16 @@
         </div>
 
         <div class="key-words-container">
-          <button data-trans="happy" value="happy" class="keyword keyword1" style="font-size: 0.65em;">Happy</button>
-          <button data-trans="sad" value="sad" class="keyword keyword2" style="font-size: 0.65em;">Sad</button>
-          <button data-trans="crazy" value="crazy" class="keyword keyword3" style="font-size: 0.75em;">Crazy</button>
-          <button data-trans="sarcastic" value="sarcastic" class="keyword keyword4"
-            style="font-size: 0.85em;">Sarcastic</button>
-          <button data-trans="funny" value="funny" class="keyword keyword5" style="font-size: 1em;">Funny</button>
+          <button onclick="onKeywordPressed(this)" data-trans="happy" value="happy" class="keyword keyword1"
+            style="font-size: 0.85em;">Happy</button>
+          <button onclick="onKeywordPressed(this)" data-trans="sad" value="sad" class="keyword keyword2"
+            style="font-size: 0.85em;">Sad</button>
+          <button onclick="onKeywordPressed(this)" data-trans="crazy" value="crazy" class="keyword keyword3"
+            style="font-size: 0.95em;">Crazy</button>
+          <button onclick="onKeywordPressed(this)" data-trans="sarcastic" value="sarcastic" class="keyword keyword4"
+            style="font-size: 1em;">Sarcastic</button>
+          <button onclick="onKeywordPressed(this)" data-trans="funny" value="funny" class="keyword keyword5"
+            style="font-size: 1em;">Funny</button>
         </div>
       </section>
 

@@ -15,3 +15,11 @@ function getRandomInt(min, max) {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min) + min) // The maximum is exclusive and the minimum is inclusive
 }
+
+function titleCase(str) {
+  return str[0].toUpperCase() + str.substr(1)
+}
+
+function cut(str, lastN) {
+  return str.substr(0, str.length - lastN)
+}
