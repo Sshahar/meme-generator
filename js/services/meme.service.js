@@ -9,9 +9,11 @@ var gMeme = {
   ],
   selectedLine: -1,
   lineTxt() {
+    if (!gMeme.lines.length) return
     return gMeme.lines[gMeme.selectedLine].txt
   },
   lineColor() {
+    if (!gMeme.lines.length) return
     return gMeme.lines[gMeme.selectedLine].color
   },
   getStep() {
@@ -26,6 +28,10 @@ var gMeme = {
   hasLoc(i) {
     return gMeme.lines[i].location
   },
+  deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLine, 1)
+    switchLine()
+  }
 }
 
 function onInitMemes() {
@@ -63,6 +69,7 @@ function addLine() {
 }
 
 function switchLine() {
+  if (!gMeme.lines.length) return
   gMeme.selectedLine++
   if (gMeme.selectedLine >= gMeme.lines.length) gMeme.selectedLine = 0
   return gMeme.lines[gMeme.selectedLine].txt

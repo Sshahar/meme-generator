@@ -108,3 +108,8 @@ function onSetFont(font) {
   gMeme.setFont(font)
   renderMeme()
 }
+
+function onDeleteLine() {
+  gMeme.deleteLine()
+  renderMeme()
+}
