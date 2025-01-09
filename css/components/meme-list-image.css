@@ -1,3 +1,7 @@
+.meme-list-image {
+  display: grid;
+}
+
 .meme-list-image img {
   cursor: pointer;
 }

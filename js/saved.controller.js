@@ -12,7 +12,7 @@ function renderMemes() {
   var memes = getMemes()
   var strHtmls = memes.map(meme => `
     <article class="meme-list-image">
-        <img src=${meme.data}>
+        <img onclick="onInitEditor('${meme.id}')" src=${meme.data}>
 		 <button data-index="1" class="delete-saved-button" onclick="onRemoveMeme('${meme.id}')">Delete</button>
         </article>
   `)
@@ -34,7 +34,8 @@ function onSaveMeme() {
 
 function saveMeme() {
   const imgData = gElCanvas.toDataURL()
-  const meme = addMeme(imgData)
+  const { src: imgSrc, lines } = getMeme()
+  const meme = addMeme(imgData, imgSrc, lines)
 
   gShouldPrint = false
   renderMemes()

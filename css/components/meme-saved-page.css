@@ -10,5 +10,6 @@
 }
 
 .delete-saved-button {
-  translate: -120% -50%;
+  translate: 0 -100%;
+  width: min-content;
 }

@@ -32,7 +32,7 @@ var gMeme = {
   }
 }
 
-function onInitMemes() {
+function initMemeService() {
   gMeme.selectedLine = 0
 }
 

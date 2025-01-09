@@ -22,16 +22,15 @@ window.addEventListener("keydown", function (e) {
   }
 }, false);
 
-function onInit() {
-  gElCanvas = document.querySelector('canvas')
-  gCtx = gElCanvas.getContext('2d')
-  resizeCanvas()
+function onInitEditor(memeId = null) {
+  if (memeId) {
+    let meme = getMemeById(memeId)
+    gMeme.src = meme.src
+    gMeme.lines = _.cloneDeep(meme.lines)
+  }
 
-  onInitMemes()
   renderMeme()
-
-  onInitGallery()
-  initSavedService()
+  showSection("editor")
 }
 
 function renderMeme(print = false) {

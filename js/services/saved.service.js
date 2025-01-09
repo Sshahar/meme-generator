@@ -21,8 +21,8 @@ function removeMeme(memeId) {
   _saveMemesToStorage()
 }
 
-function addMeme(imgData) {
-  var meme = _createMeme(imgData)
+function addMeme(imgData, imgSrc, lines) {
+  var meme = _createMeme(imgData, imgSrc, lines)
   gMemes.unshift(meme)
 
   _saveMemesToStorage()
@@ -33,10 +33,12 @@ function getMemeById(memeId) {
   return gMemes.find(meme => memeId === meme.id)
 }
 
-function _createMeme(imgData) {
+function _createMeme(imgData, imgSrc, lines) {
   return {
     id: makeId(),
-    data: imgData
+    data: imgData,
+    src: imgSrc,
+    lines
   }
 }
 

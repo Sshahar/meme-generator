@@ -47,7 +47,7 @@
 
 /* Small */
 @media (min-width: 640px) {
-  .meme-list-image img {
+  .memes-grid-container .meme-list-image img {
     max-width: 20vw;
   }
 
