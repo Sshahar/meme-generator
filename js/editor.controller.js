@@ -22,7 +22,8 @@ function onInit() {
 
   onInitMemes()
   renderMeme()
-  showSection("gallery")
+
+  onInitGallery()
 }
 
 function renderMeme() {

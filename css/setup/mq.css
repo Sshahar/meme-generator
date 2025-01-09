@@ -21,6 +21,10 @@
   .meme-editor-page .meme-editor-canvas {
     width: 35vw;
   }
+
+  .filter-search-section {
+    flex-direction: row;
+  }
 }
 
 /* Large */

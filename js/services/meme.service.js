@@ -1,7 +1,5 @@
 'use strict'
 
-const STORAGE_KEY = 'memeDB'
-
 var gMeme = {
   src: 'img/1.jpg', lines: [
     _createLine('Add Text Here'),

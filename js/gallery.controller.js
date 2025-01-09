@@ -1,15 +1,20 @@
 'use strict'
 
-renderGallery()
-function renderGallery() {
-  let strHTML = ''
-  for (let i = 0; i < 18; i++) {
-    strHTML += `
-        <article class="meme-list-image">
-          <img src="img/${i + 1}.jpg" alt="smart meme" onclick="onImgSelect(this)">
-        </article>
+function onInitGallery() {
+  onGalleryInit()
+  renderGallery()
+  showSection("gallery")
+}
+
+function renderGallery(filterTxt = "") {
+  const strHTML = getImages(filterTxt).map(image =>
     `
-  }
+      <article class="meme-list-image">
+        <img src="img/${image.src}" alt="smart meme" onclick="onImgSelect(this)">
+      </article>
+    `
+  ).join('')
+
 
   document.querySelector('.meme-gallery-page .memes-grid-container')
     .innerHTML = strHTML
@@ -20,4 +25,8 @@ function onImgSelect(elImg) {
   renderMeme()
 
   showSection("editor")
+}
+
+function onSearchMeme(txt) {
+  renderGallery(txt)
 }
