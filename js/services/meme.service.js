@@ -40,6 +40,14 @@ function getMeme() {
   return gMeme
 }
 
+function setMeme(meme) {
+  gMeme = {
+    ...gMeme, src: meme.src, lines: [
+      _createLine(meme.txt)
+    ]
+  }
+}
+
 function getSelectedLine() {
   return gMeme.selectedLine
 }
