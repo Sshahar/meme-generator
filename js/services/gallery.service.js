@@ -1,10 +1,8 @@
 'use strict'
 
-const STORAGE_KEY = 'imageDB'
-
 var gImages
 
-function onGalleryInit() {
+function initGallery() {
   _createImages()
 }
 
@@ -20,7 +18,6 @@ function addImage(src, tag) {
   var image = _createImage(src, tag)
   gImages.unshift(image)
 
-  _saveImagesToStorage()
   return image
 }
 
@@ -29,7 +26,6 @@ function getImageById(imageId) {
 }
 
 function _createImages() {
-  gImages = loadFromStorage(STORAGE_KEY)
   if (gImages && gImages.length) return
 
   // If no images in storage - generate data
@@ -41,7 +37,6 @@ function _createImages() {
     const tag = tags[Math.floor(Math.random() * tags.length)]
     gImages.push(_createImage(`${i + 1}.jpg`, tag))
   }
-  _saveImagesToStorage()
 }
 
 function _createImage(src, tag) {
@@ -50,8 +45,4 @@ function _createImage(src, tag) {
     src,
     tag
   }
-}
-
-function _saveImagesToStorage() {
-  saveToStorage(STORAGE_KEY, gImages)
 }

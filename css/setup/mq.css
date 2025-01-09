@@ -13,7 +13,7 @@
 
   .main-nav {
     position: fixed;
-    top: 60px;
+    top: var(--spacing-head);
     background: var(--clr-primary2);
     left: 0;
     width: 100%;

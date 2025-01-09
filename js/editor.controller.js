@@ -16,6 +16,12 @@ document.body.addEventListener('keydown', function onEventHandler(ev) {
   renderMeme()
 })
 
+window.addEventListener("keydown", function (e) {
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+    e.preventDefault();
+  }
+}, false);
+
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
@@ -25,6 +31,7 @@ function onInit() {
   renderMeme()
 
   onInitGallery()
+  initSavedService()
 }
 
 function renderMeme(print = false) {

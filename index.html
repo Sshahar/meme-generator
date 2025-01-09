@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,7 +24,7 @@
         <ul class="nav-list flex clean-list">
           <li><a onclick="onShowSection('gallery')">Gallery</a></li>
           <li><a onclick="onShowSection('editor')">Editor</a></li>
-          <li><a onclick="onShowSection('saved')">Saved</a></li>
+          <li><a onclick="onInitSaved()">Saved</a></li>
         </ul>
       </nav>
 
@@ -125,18 +126,28 @@
 
             <!-- Color -->
             <button class="btn-font fill-color-icon color-picker fa-solid fa-fill-drip">
-              <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this)"></input>
+              <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this.value)"></input>
             </button>
 
         </div>
 
         <!-- Download to computer -->
         <div class="save-container">
+          <a href="#" data-trans="save" class="btn btn-save" onclick="onSaveMeme()">Save</a>
           <a href="#" data-trans="download" class="btn btn-download" onclick="onDownloadMeme(this)">Download</a>
         </div>
       </section>
     </main>
   </section>
+
+  <section class="meme-saved-page">
+    <main>
+      <section class="saved-memes-container"></section>
+    </main>
+  </section>
+
+  <div class="user-msg"></div>
+
 
   <script src="js/canvas.util.js"></script>
   <script src="js/editor.controller.js"></script>
@@ -146,6 +157,8 @@
   <script src="js/services/storage.service.js"></script>
   <script src="js/services/util.service.js"></script>
   <script src="js/gallery.controller.js"></script>
+  <script src="js/saved.controller.js"></script>
+  <script src="js/services/saved.service.js"></script>
 </body>
 
 </html>

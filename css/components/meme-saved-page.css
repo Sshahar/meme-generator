@@ -1,0 +1,14 @@
+.meme-saved-page {
+  margin-block-start: var(--spacing-head);
+}
+
+.saved-memes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.delete-saved-button {
+  translate: -120% -50%;
+}

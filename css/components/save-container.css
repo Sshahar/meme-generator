@@ -1,0 +1,41 @@
+.save-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 50px;
+  font-size: clamp(1vw, 1em, 5vw);
+  width: 100%;
+  justify-content: center;
+}
+
+.save-container .btn-save {
+  box-shadow: rgb(18, 73, 125) 1px 6px 0px, rgb(20, 81, 138) 0px 5px 0px inset;
+  background-color: rgb(26, 105, 178);
+}
+
+.save-container .btn {
+  text-decoration-color: initial;
+  color: rgb(232, 230, 227);
+}
+
+.save-container .btn-save {
+  box-shadow: 1px 6px 0 #165b9c, inset 0 5px 0 #63a8e9;
+  background-color: #2083df;
+}
+
+.save-container .btn-download {
+  box-shadow: rgb(86, 18, 125) 1px 6px 0px, rgb(95, 20, 138) 0px 5px 0px inset;
+  background-color: rgb(122, 26, 178);
+}
+
+.save-container .btn {
+  margin-inline: 5px;
+  padding-inline: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-decoration: none;
+  color: white;
+}

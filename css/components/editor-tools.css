@@ -20,6 +20,7 @@
   flex-direction: column;
   background-color: rgb(56, 59, 66);
   border-radius: 1.875em;
+  padding-block-end: 200px
 }
 
 .font-picker {}

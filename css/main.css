@@ -13,9 +13,22 @@
 @import url(components/nav-list.css);
 @import url(components/meme-list-image.css);
 @import url(components/memes-grid-container.css);
-@import url(components/meme-gallery-page.css);
 @import url(components/meme-editor-page.css);
 @import url(components/editor-tools.css);
+@import url(components/meme-saved-page.css);
+@import url(components/user-msg.css);
+@import url(components/save-container.css);
 
 /* Media Queries */
 @import url(setup/mq.css);
+
+.font-editors-container input[type='color'] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+
+.btn-font {
+  position: relative;
+}

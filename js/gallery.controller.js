@@ -1,7 +1,7 @@
 'use strict'
 
 function onInitGallery() {
-  onGalleryInit()
+  initGallery()
   renderGallery()
   showSection("gallery")
 }
