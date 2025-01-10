@@ -129,8 +129,12 @@
             <button class="btn-font fill-color-icon color-picker fa-solid fa-fill-drip">
               <input type="color" class="fill-color-input btn-font" oninput="onSetFillStyle(this.value)"></input>
             </button>
-
         </div>
+
+        <!-- Emoji -->
+        <button onclick="onToggleEmojiPicker()">😁</button>
+        <emoji-picker class="hidden"></emoji-picker>
+
 
         <!-- Download to computer -->
         <div class="save-container">
@@ -168,6 +172,8 @@
   <script src="js/services/saved.service.js"></script>
   <script src="js/randomize.controller.js"></script>
   <script src="js/services/upload.service.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

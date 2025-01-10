@@ -4,6 +4,9 @@ let gElCanvas
 let gCtx
 let gShouldPrint
 
+document.querySelector('emoji-picker')
+  .addEventListener('emoji-click', event => onEmojiInput(event.detail));
+
 document.body.addEventListener('keydown', function onEventHandler(ev) {
   switch (ev.key) {
     case "ArrowUp":
@@ -177,3 +180,13 @@ function onSelectEmoji(elImg) {
   }
   $(elImg).toggleClass('active')
 }
+
+function onEmojiInput(detail) {
+  const unicode = detail.unicode
+  const newTxt = $('.meme-text-input').val() + unicode
+  onAddTxt(newTxt)
+}
+
+function onToggleEmojiPicker() {
+  $('emoji-picker').toggleClass('hidden')
+} 
