@@ -1,5 +1,7 @@
 'use strict'
 
+const REPO_URL = "https://media.githubusercontent.com/media/Sshahar/meme-generator/master"
+
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
