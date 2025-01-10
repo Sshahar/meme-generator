@@ -72,7 +72,8 @@
 
   <section class="meme-editor-page">
     <main>
-      <canvas tabindex="1" class="meme-editor-canvas" onmousedown="onDown(event)" ontouchstart="onDown(event)"></canvas>
+      <canvas tabindex="1" class="meme-editor-canvas" onmousedown="onDown(event)" onmousemove="onMove(event)"
+        onmouseup="onUp()" ontouchstart="onDown(event)" ontouchmove="onMove(event)" ontouchend="onUp()"></canvas>
 
       <section class="editor-tools">
         <input type="text" data-trans="add-text-here" class="meme-text-input custom-input" placeholder="Add Text Here"

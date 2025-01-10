@@ -115,14 +115,38 @@ function onSwitchLine() {
   renderMeme()
 }
 
+let gDrag
+let gStartLoc
 function onDown(ev) {
-  const clickLocation = getEvLoc(ev)
-  // console.log('clickLocation:', clickLocation)
-  const txt = highlightLine(clickLocation)
-
-  renderMeme()
+  // Was a line clicked?
+  gStartLoc = getEvLoc(ev)
+  const line = setSelectedLine(gStartLoc)
+  if (line !== -1) {
+    gDrag = true
+    renderMeme()
+  }
 }
 
+function onMove(ev) {
+  const loc = getEvLoc(ev)
+  // drawRect(loc.x, loc.y)
+  const line = setSelectedLine(loc)
+  if (line !== -1) {
+    document.body.style.cursor = 'grab'
+  } else {
+    document.body.style.cursor = 'pointer'
+  }
+
+  if (!gDrag) return
+
+  // Move line
+  const selectedLine = setSelectedLine(loc)
+  gMeme.setLoc(selectedLine, loc)
+  renderMeme()
+}
+function onUp() {
+  gDrag = false
+}
 
 function onSetAlignment(align) {
   gMeme.setAlign(align)

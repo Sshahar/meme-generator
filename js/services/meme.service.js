@@ -17,11 +17,17 @@ var gMeme = {
   getStep() {
     return 5
   },
+  getLine(index) {
+    return gMeme.lines[index]
+  },
   setAlign(align) {
     gMeme.lines[gMeme.selectedLine].align = align
   },
   setFont(font) {
     gMeme.lines[gMeme.selectedLine].font = font
+  },
+  setLoc(i, loc) {
+    gMeme.lines[i].location = { ...loc }
   },
   hasLoc(i) {
     return gMeme.lines[i].location
@@ -89,7 +95,7 @@ function updateLocation(deltaY) {
   gMeme.lines[gMeme.selectedLine].location.y += deltaY
 }
 
-function highlightLine(clickLocation) {
+function setSelectedLine(clickLocation) {
   let selectedLine = gMeme.lines.findIndex(line => {
     const { location, size: height, txt } = line
     // is click in border?
@@ -101,7 +107,7 @@ function highlightLine(clickLocation) {
   })
   if (selectedLine !== -1) gMeme.selectedLine = selectedLine
 
-  return gMeme.lineTxt()
+  return selectedLine
 }
 
 function _createLine(txt) {
