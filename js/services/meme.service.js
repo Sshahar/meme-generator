@@ -38,8 +38,13 @@ var gMeme = {
   }
 }
 
-function initMemeService() {
+function initMemeService(src = null) {
   gMeme.selectedLine = 0
+  gMeme.lines = [
+    _createLine('Add Text Here'),
+    _createLine('not Immutable :('),
+  ]
+  if (src) setImg(src)
 }
 
 function getMeme() {

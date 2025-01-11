@@ -37,6 +37,19 @@ function _createImages() {
     const tag = tags[Math.floor(Math.random() * tags.length)]
     gImages.push(_createImage(`${i + 1}.jpg`, tag))
   }
+
+  [
+    "leo.jpg",
+    "LOGO.png",
+    "meme1.jpg",
+    "One-Does-Not-Simply.jpg",
+    "Oprah-You-Get-A.jpg",
+    "patrick.jpg",
+    "putin.jpg",
+    "X-Everywhere.jpg",].forEach(imgSrc => {
+      const tag = tags[Math.floor(Math.random() * tags.length)]
+      gImages.push(_createImage(`${imgSrc}`, tag))
+    })
 }
 
 function _createImage(src, tag) {

@@ -62,9 +62,14 @@ function loadImageFromSrc(imgData, onImageReady) {
   img.src = imgData
 }
 
-function resizeCanvas() {
+function resizeCanvas(width = null) {
+  if (width) {
+    gElCanvas.width = width
+    return
+  }
   const elContainer = document.querySelector('.meme-editor-canvas')
   gElCanvas.width = elContainer.clientWidth
+
 }
 
 function showSection(section) {

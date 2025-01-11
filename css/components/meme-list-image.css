@@ -1,5 +1,6 @@
 .meme-list-image {
   display: grid;
+  place-content: center;
 }
 
 .meme-list-image img {

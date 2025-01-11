@@ -42,6 +42,7 @@ function renderMeme(print = false) {
   const elImg = new Image()
   elImg.src = imgSrc
   elImg.onload = () => {
+    resizeCanvas(elImg.width)
     coverCanvasWithImg(elImg)
     meme.lines.forEach((line, i) => {
       const { size } = line
@@ -54,7 +55,6 @@ function renderMeme(print = false) {
       if (!gMeme.hasLoc(i)) setLineLocation(i, { x: gElCanvas.width / 2, y: deltaY })
 
       drawLine(line, isSelected)
-
     })
 
     if (print === "download" && gShouldPrint) downloadMeme()

@@ -21,7 +21,7 @@ function renderGallery(filterTxt = "") {
 }
 
 function onImgSelect(elImg) {
-  setImg(elImg.src)
+  initMemeService(elImg.src)
   renderMeme()
 
   showSection("editor")
