@@ -20,7 +20,7 @@ document.body.addEventListener('keydown', function onEventHandler(ev) {
 })
 
 window.addEventListener("keydown", function (e) {
-  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+  if (["ArrowUp", "ArrowDown"].indexOf(e.code) > -1) {
     e.preventDefault();
   }
 }, false);
