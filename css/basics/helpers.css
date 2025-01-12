@@ -26,6 +26,7 @@
 .custom-input {
   font-size: 24px;
   padding: 10px;
+  padding-inline-start: 1em;
   border: 2px solid var(--clr-primary-1);
   border-radius: 1em;
 }
@@ -41,4 +42,9 @@
 
 .shadow {
   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.btn-trans {
+  background: transparent;
+  border: none;
 }

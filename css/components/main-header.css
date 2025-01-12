@@ -2,11 +2,18 @@
   position: fixed;
   height: var(--spacing-head);
   width: 100%;
-  padding: 15px;
+
+  background-color: var(--clr-black);
+  padding-block-end: 15px;
 }
 
 .main-header .btn-toggle-menu {
   display: none;
+  background: transparent;
+  border: none;
+  border-radius: .5em;
+  font-size: 2em;
+  color: var(--clr-white);
 }
 
 .meme-gallery-page,
@@ -29,6 +36,7 @@
 
 .meme-editor-canvas {
   justify-self: center;
+  border-radius: 1em;
 }
 
 .filter-search-section {
@@ -85,13 +93,6 @@
   border: none;
   background-color: inherit;
   color: #fff;
-}
-
-.btn-toggle-menu {
-  background: transparent;
-  border: none;
-  border-radius: .5em;
-  font-size: 2em;
 }
 
 .random-cube {

@@ -43,6 +43,10 @@
   .main-nav a {
     padding: 1em;
   }
+
+  .main-nav a {
+    font-size: 1.5em;
+  }
 }
 
 /* Small */
@@ -60,6 +64,28 @@
   .main-layout>* {
     grid-column: 2;
   }
+
+  .main-nav a {
+    font-size: 1.2em;
+  }
+
+  .filter-search-section {
+    display: grid;
+    grid-template-columns: 5vw repeat(2, 1fr) 5vw;
+    gap: 1em;
+  }
+
+  .input-icon-container {
+    grid-column: 2;
+  }
+
+  .filter-search-section .search-meme-input {
+    padding-inline-start: 1em;
+  }
+
+  .input-icon-container i.fa-magnifying-glass {
+    scale: 0.7;
+  }
 }
 
 /* Medium */
@@ -71,6 +97,14 @@
 
   .filter-search-section {
     flex-direction: row;
+  }
+
+  .main-nav a {
+    font-size: 1.5em;
+  }
+
+  .editor-tools {
+    padding-block-start: 1em;
   }
 }
 

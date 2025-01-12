@@ -1,7 +1,7 @@
 'use strict'
 
 var gMeme = {
-  src: `${REPO_URL}/img/1.jpg`, lines: [
+  src: `img/1.jpg`, lines: [
     _createLine('Add Text Here'),
     _createLine('not Immutable :('),
   ],

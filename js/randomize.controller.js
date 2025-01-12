@@ -9,5 +9,5 @@ function onInitRandomized() {
 
 function randomImg() {
   const img = Math.floor(Math.random() * 18)
-  return `${REPO_URL}/img/${img}.jpg`
+  return `img/${img}.jpg`
 }

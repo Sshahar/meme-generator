@@ -10,7 +10,7 @@ function renderGallery(filterTxt = "") {
   const strHTML = getImages(filterTxt).map(image =>
     `
       <article class="meme-list-image">
-        <img src="${REPO_URL}/img/${image.src}" alt="smart meme" onclick="onImgSelect(this)">
+        <img src="img/${image.src}" alt="smart meme" onclick="onImgSelect(this)">
       </article>
     `
   ).join('')
