@@ -27,6 +27,8 @@
 .editor-tools a {
   font-size: 1.5em;
   padding: 0.57rem;
+  color: var(--clr-white);
+  border-color: var(--clr-white);
 }
 
 .editor-tools {
