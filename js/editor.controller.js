@@ -76,21 +76,31 @@ function onAddTxt(txt) {
 }
 
 function onDownloadMeme(elLink) {
-  gShouldPrint = true
-  // TODO: fix save of highlight input
-  renderMeme("download")
+  // Remove line highlight
+  let print = true
+  renderMeme(print)
+
+  // Download image
+  const dataUrl = gElCanvas.toDataURL()
+  // const elLink = document.querySelector('.btn-download')
+  elLink.href = dataUrl
+  elLink.download = 'my-perfect-img'
+  // elLink.click()
+  gShouldPrint = false
+
+  // Render highlight again
+  renderMeme()
 }
 
-
 function downloadMeme() {
-  const dataUrl = gElCanvas.toDataURL()
-  const elLink = document.querySelector('.btn-download')
-  elLink.href = dataUrl
-  // Set a name for the downloaded file
-  elLink.download = 'my-perfect-img'
-  elLink.click()
-  gShouldPrint = false
-  renderMeme()
+  // const dataUrl = gElCanvas.toDataURL()
+  // const elLink = document.querySelector('.btn-download')
+  // elLink.href = dataUrl
+  // // Set a name for the downloaded file
+  // elLink.download = 'my-perfect-img'
+  // elLink.click()
+  // gShouldPrint = false
+  // renderMeme()
 }
 
 function onSetFillStyle(color) {
